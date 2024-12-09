@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    
+    <link rel="stylesheet" href="/presentaion-work/temp-con.css">
+    
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="icons">
+        <div id="date">9:41</div>
+        <div class="right-icons">
+        <div class="ic"><img src="/presentaion-work/design-files/icon-netw.svg" alt="Signal" width="20"></div>
+        <div class="ic"><img src="/presentaion-work/design-files/icon-netw-2.svg" alt="WiFi" width="20"></div>
+        <div class="ic"><img id="bat" src="/presentaion-work/design-files/bat.svg" alt="Battery" width="30"></div>
+        </div>
+      </div>
+      <h1>Temperature Converter</h1>
+      <div class="form">
+        <div class="left">
+          <label for="temperature">Degrees</label>
+          <input type="number" id="temperature" placeholder="Enter value">
+          <label for="result">Result</label>
+          <input type="text" id="result" placeholder="Result" readonly>
+        </div>
+        <div class="right">
+          <label for="type">Type</label>
+          <select id="type">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn">
+        <button id="convertBtn">Convert</button>
+      </div>
+    </div>
+  </section>
+ 
+    <script src="/presentaion-work/temp-conv.js"></script>
+</body>
+</html>

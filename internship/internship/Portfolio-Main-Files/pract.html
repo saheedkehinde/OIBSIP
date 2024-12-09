@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e7ecf3;
+    }
+
+    .container {
+      height: 70vh;
+      width: 40vw;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    #date {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #666;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #3d3c3c;
+    }
+
+    .form {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5rem;
+    }
+
+    .left, .right {
+      width: 45%;
+    }
+
+    label {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      display: block;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    input, select {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      padding: 5px 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      outline: none;
+      background: transparent;
+    }
+
+    input:focus, select:focus {
+      border-bottom: 2px solid #007bff;
+    }
+
+    input[readonly] {
+      color: #666;
+    }
+
+    .btn {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="icons">
+        <div id="date">9:41</div>
+        <div><img src="/path/to/icon-netw.svg" alt="Signal" width="20"></div>
+        <div><img src="/path/to/icon-netw-2.svg" alt="WiFi" width="20"></div>
+        <div><img id="bat" src="/path/to/bat.svg" alt="Battery" width="30"></div>
+      </div>
+      <h1>Temperature Converter</h1>
+      <div class="form">
+        <div class="left">
+          <label for="temperature">Degrees</label>
+          <input type="number" id="temperature" placeholder="Enter value">
+          <label for="result">Result</label>
+          <input type="text" id="result" placeholder="Result" readonly>
+        </div>
+        <div class="right">
+          <label for="type">Type</label>
+          <select id="type">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn">
+        <button id="convertBtn">Convert</button>
+      </div>
+    </div>
+  </section>
+  <!-- <script src="script.js"></script> -->
+
+
+  <script>
+document.getElementById("convertBtn").addEventListener("click", function () {
+  const temp = parseFloat(document.getElementById("temperature").value);
+  const type = document.getElementById("type").value;
+  const resultField = document.getElementById("result");
+
+  if (isNaN(temp)) {
+    resultField.value = "Enter a valid number";
+    return;
+  }
+
+  let result = 0;
+
+  if (type === "fahrenheit") {
+    // Fahrenheit to Celsius
+    result = ((temp - 32) * 5) / 9;
+    resultField.value = `${result.toFixed(2)} °C`;
+  } else if (type === "celsius") {
+    // Celsius to Fahrenheit
+    result = (temp * 9) / 5 + 32;
+    resultField.value = `${result.toFixed(2)} °F`;
+  } else if (type === "kelvin") {
+    // Celsius to Kelvin
+    result = temp + 273.15;
+    resultField.value = `${result.toFixed(2)} K`;
+  }
+});
+  </script>
+</body>
+</html>
