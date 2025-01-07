@@ -73,35 +73,35 @@ header {
     opacity: 0.4;
  }
 .stack-box {
-    position: fixed; /* Ensures it stays in place while scrolling */
+    position: fixed; 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    bottom: 20px; /* Adjusts distance from the bottom of the viewport */
-    left: 50%; /* Centers the stack box horizontally */
-    transform: translateX(-50%); /* Centers accurately */
-    width: 90%; /* Responsive width */
-    max-width: 30rem; /* Caps the maximum width */
-    height: 4rem; /* Fixed height */
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent white-gray color */
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; 
+    max-width: 30rem; 
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.2); 
     border-radius: 25px;
-    backdrop-filter: blur(10px); /* Applies the blur effect for the background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    z-index: 100; /* Ensures it stays above other elements */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for a clean look */
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 100; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .box img {
     width: 2.5rem;
     height: 2.5rem;
     color: #ffffff;
-    cursor: pointer; /* Changes cursor on hover */
-    transition: transform 0.3s ease; /* Smooth scaling effect */
+    cursor: pointer; 
+    transition: transform 0.3s ease;
 }
 
 .box img:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1); 
 }
  .container {
     position: absolute;
@@ -260,29 +260,6 @@ header {
     left: 5px;
     animation: slideIn 4s ease-in-out infinite;
  }
-/* 
- @keyframes bounceIn {
-    0% {
-        transform: translateY(0%);
-        opacity: 0;
-
-    }
-    50% {
-        transform: translateY(-50%%);
-        opacity: 0;
-
-    }
-    70% {
-        transform: translateY(0%);
-        opacity: 0;
-
-    }
-    100% {
-        transform: translateY(0%);
-        opacity: 0;
-
-    }
- } */
 
  .sec-1 {
     padding-top: 7rem;
